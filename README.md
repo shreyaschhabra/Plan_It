@@ -1,23 +1,62 @@
 # PLAN-IT
 
-A coming-soon site and early-access waitlist for the IIT Patna student travel project.
+A static campus travel website for IIT Patna: four proposed travel packages, one per destination, campus/airport/railway rides, organiser enquiries on WhatsApp, a video-ready About page, and My Trips with locally recorded bookings and group plans.
 
-## Project layout
+## Run
 
-- `public/` contains the responsive landing page, brand assets and signup form.
-- `api/waitlist.js` is the Vercel Function for signup and the aggregate count.
-- The waitlist uses the private Vercel Blob store `plan-it-iitp-waitlist`, connected to the production environment of `bitrunners/plan-it-iitp`.
+Node.js 22 or newer:
 
-To preview the static page locally, run `python3 -m http.server 3000 --bind 127.0.0.1 --directory public`. For a working signup in another Vercel environment, connect a separate private Blob store to that environment before deploying or running `vercel dev`.
+```sh
+npm ci
+npm run dev
+```
 
-## Managing the waitlist
+Open http://127.0.0.1:3000. No accounts, database, CAPTCHA or API keys are required.
 
-In the Vercel project dashboard, open **Storage → plan-it-iitp-waitlist**. The private JSON records under `waitlist/` contain the email, first selected interest, and signup timestamp. The public GET endpoint returns only the number of records. Each normalized email gets one record, so repeat signups preserve the original choice and count.
+## Deploy on Vercel
 
-To locate a specific record for a deletion request, trim and lowercase the email, compute its SHA-256 hex digest, and find `waitlist/<digest>.json` in the private store. Access to the store is managed in Vercel. This site records consent for launch updates. The team handles outreach separately.
+Import this repository, select **Other**, use `npm run build` as the build command and `dist` as the output directory. The committed `vercel.json` already supplies these values and supports My Trips/group-plan links. Existing environment values from a previous deployment are unused. No server function is deployed. Redeploy after merging the changes.
 
-## Content and imagery
+The canonical site URL defaults to `https://planit-lac.vercel.app`; change `site_url` in `public/content.json` or set the optional public `SITE_URL` build variable when using another domain. No secret environment variables are needed. Do not commit private configuration files.
 
-The 23-response statistic comes from the supplied problem-identification report, which ties the percentages to respondent counts. The value proposition canvas lists a different survey sample size. The lean canvas sets Rajgir and Gaya as the first pilots. Later destinations and product features are presented as planned.
+## Website content
 
-The hero photo was generated with the built-in image tool for this site. The brief was a portrait editorial photograph of four Indian college friends with daypacks overlooking Himalayan foothills at golden hour, in warm orange and dusky teal, with space for site overlays.
+Edit `public/content.json` to change destination packages, the organiser WhatsApp number, support email and testimonial clips. The destinations are Jaipur, Darjeeling, Sikkim and Meghalaya, with one package and one place-appropriate theme label for each. Homepage, catalogue and detail photographs are locally hosted, unwatermarked Unsplash images; photographer/source credits are listed on About and in `docs/PHOTO-CREDITS.md`. These are proposed itineraries, not claims of operator availability. Supplied expected cost ranges are shown as estimates, with their stated inclusions/exclusions. Final prices and cancellation terms require organiser confirmation; packages without an estimate remain on request. Meghalaya’s range has no stated per-person/group basis, so visitors are asked to confirm that basis. Enquiries require a name.
+
+For each real, permissioned testimonial, add an entry to `testimonials`:
+
+```json
+{
+  "title": "Traveller’s trip story",
+  "description": "A short description of the real trip.",
+  "src": "/assets/testimonials/trip.mp4",
+  "poster": "/assets/testimonials/trip.webp",
+  "captions": "/assets/testimonials/trip.vtt"
+}
+```
+
+Only add files you have permission to publish. Until clips are provided, About displays an empty photo pinboard with captions for future campus memories; there are no invented endorsements or video links. Videos use native controls, `playsinline` and no preload.
+
+## Enquiries and My Trips
+
+Selecting a package or ride fills a WhatsApp draft with the dates, group size, route, vehicle, return departure and pickup instructions. Opening the link saves **Enquiry drafted** on that browser. It does not mean that a message was sent or a booking was confirmed.
+
+After the organisers confirm directly, open the enquiry in My Trips and select **Record as booked**, recording the confirmation date, optional organiser reference and confirmed total. It then appears in the **Booked trips** tab. Completed/cancelled records remain under Past trips. These are personal records made by the visitor, not independently verified tickets or shared live inventory. No online money collection occurs.
+
+Trip data uses browser local storage. It remains after refresh on the same browser and origin; it does not sync across devices. Export/import from My Trips provides a backup and a way to move data. Imports validate records, preserve existing IDs and reject invalid files. Clearing browser data removes local records. A local export can contain names and travel details, so share it only with the intended people.
+
+Group plans retain editable dates/budget, local itinerary notes, manually entered member names and shared expenses. Equal, percentage and custom splits reconcile to integer paise; recorded payments adjust balances. WhatsApp shares a plan or split summary. There are no shared edit sessions or online invitations.
+
+Previous private local files are retained outside the deploy output. If needed, run `node scripts/export-local-trips.js` and import `.local/previous-trips-export.json` through My Trips. This converts compatible previous booking records without changing the original file. No external database, hosted data or provider account is deleted by this change.
+
+## Verification
+
+```sh
+npm test
+npm run check
+npm run build
+npx playwright install chromium
+npm run test:e2e
+```
+
+On a Mac with Chrome installed, set `CHROME_PATH='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'` for the browser tests. Tests check enquiry drafts, booking confirmation records, persistence/export/import, local plans, expense rounding, navigation and responsive layouts. CI runs the same build and checks.

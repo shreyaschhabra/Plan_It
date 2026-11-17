@@ -3,7 +3,19 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "dependencies": {
-    "@vercel/blob": "2.8.0"
+  "dependencies": {},
+  "devDependencies": {
+    "@playwright/test": "^1.65.1"
+  },
+  "scripts": {
+    "dev": "node server/http.js",
+    "start": "node server/http.js",
+    "build": "node scripts/build.js",
+    "check": "node scripts/check.js",
+    "test": "node --test tests/*.test.js",
+    "test:e2e": "playwright test"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

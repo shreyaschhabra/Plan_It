@@ -1,0 +1,257 @@
+{
+  "site_url": "https://planit-lac.vercel.app",
+  "whatsapp": "918789686217",
+  "contact_name": "the organisers",
+  "email": "",
+  "testimonials": [],
+  "destinations": [
+    {
+      "id": "jaipur",
+      "slug": "jaipur",
+      "name": "Jaipur",
+      "state": "Rajasthan",
+      "activity": "Palace walks & old-city streets",
+      "image": "/assets/destinations/jaipur.webp",
+      "image_alt": "Hawa Mahal’s pink sandstone facade in Jaipur",
+      "photographer": "Roberto Reposo",
+      "photo_source": "https://unsplash.com/photos/hawa-mahal-india-LgQoL6eOdHs"
+    },
+    {
+      "id": "darjeeling",
+      "slug": "darjeeling",
+      "name": "Darjeeling",
+      "state": "West Bengal",
+      "activity": "Tea trails & hill-town views",
+      "image": "/assets/destinations/darjeeling.webp",
+      "image_alt": "Green tea gardens and a lone tree in Darjeeling",
+      "photographer": "Soumya Banerjee",
+      "photo_source": "https://unsplash.com/photos/a-lone-tree-in-the-middle-of-a-tea-plantation-nWSaGKOe1To"
+    },
+    {
+      "id": "sikkim",
+      "slug": "sikkim",
+      "name": "Sikkim",
+      "state": "Sikkim",
+      "activity": "Mountain lakes & scenic drives",
+      "image": "/assets/destinations/sikkim.webp",
+      "image_alt": "Tsomgo Lake and surrounding mountains in Sikkim",
+      "photographer": "Sahil Pandita",
+      "photo_source": "https://unsplash.com/photos/white-and-red-concrete-building-near-body-of-water--0GJ4CIHtEg"
+    },
+    {
+      "id": "meghalaya",
+      "slug": "meghalaya",
+      "name": "Meghalaya",
+      "state": "Meghalaya",
+      "activity": "Living-root bridges & forest walks",
+      "image": "/assets/destinations/meghalaya.webp",
+      "image_alt": "Living root bridge over a stream in Nongriat, Meghalaya",
+      "photographer": "Abhishek Tirkey",
+      "photo_source": "https://unsplash.com/photos/a-beautiful-living-root-bridge-spans-a-stream-_UwEhm6AMZQ"
+    }
+  ],
+  "packs": [
+    {
+      "id": "pack-jaipur",
+      "slug": "jaipur",
+      "destination_id": "jaipur",
+      "title": "Pink City, full colour.",
+      "theme": "Heritage",
+      "nights": 2,
+      "min_group": 2,
+      "max_group": 20,
+      "price_paise": null,
+      "description": "A suggested Jaipur escape for your campus crew. The organisers confirm travel, availability, the final itinerary and the full quote before booking.",
+      "days": [
+        {
+          "day_no": 1,
+          "title": "Day 1",
+          "description": "Jaipur Arrival → Hotel Check-in → Hawa Mahal → City Palace → Jantar Mantar → Johari Bazaar → Jaipur Night Market → Hotel Stay"
+        },
+        {
+          "day_no": 2,
+          "title": "Day 2",
+          "description": "Hotel → Amer Fort → Panna Meena ka Kund → Jaigarh Fort → Jal Mahal → Nahargarh Fort (Sunset Viewpoint) → Jaipur Café Hopping → Hotel Stay"
+        },
+        {
+          "day_no": 3,
+          "title": "Day 3",
+          "description": "Hotel → Albert Hall Museum → Patrika Gate → Birla Mandir → Local Shopping / Food Exploration → Departure"
+        }
+      ],
+      "inclusions": [
+        "Suggested day-by-day itinerary",
+        "Trip coordination with the organisers"
+      ],
+      "exclusions": [
+        "Transport, meals, entry fees and activities unless explicitly included in the final quote"
+      ],
+      "cancellation": "Confirm cancellation and refund terms with the organisers before booking or paying.",
+      "estimated_cost": {
+        "min_paise": 500000,
+        "max_paise": 750000,
+        "basis": "per person",
+        "note": "Excludes travel to and from Jaipur."
+      }
+    },
+    {
+      "id": "pack-darjeeling",
+      "slug": "darjeeling",
+      "destination_id": "darjeeling",
+      "title": "Tea trails. Hill-town mornings.",
+      "theme": "Nature",
+      "nights": 3,
+      "min_group": 2,
+      "max_group": 20,
+      "price_paise": null,
+      "description": "A suggested Darjeeling escape for your campus crew. The organisers confirm travel, availability, the final itinerary and the full quote before booking.",
+      "days": [
+        {
+          "day_no": 1,
+          "title": "Day 1",
+          "description": "New Jalpaiguri (NJP) / Siliguri → Scenic Drive to Darjeeling → Hotel Check-in → Darjeeling Mall Road → Chowrasta Square → Local Café Hopping → Night Market → Hotel Stay"
+        },
+        {
+          "day_no": 2,
+          "title": "Day 2",
+          "description": "Hotel → Tiger Hill (Sunrise Viewpoint) → Batasia Loop → Ghoom Monastery → Himalayan Mountaineering Institute → Padmaja Naidu Himalayan Zoological Park → Darjeeling Ropeway (if time permits) → Hotel Stay"
+        },
+        {
+          "day_no": 3,
+          "title": "Day 3",
+          "description": "Hotel → Lamahatta Eco Park → Tinchuley Viewpoint → Takdah Tea Garden → Scenic Photography Stops → Return to Darjeeling → Bonfire / Group Dinner (if available) → Hotel Stay"
+        },
+        {
+          "day_no": 4,
+          "title": "Day 4",
+          "description": "Hotel → Happy Valley Tea Estate → Japanese Peace Pagoda → Local Shopping / Souvenirs → Scenic Drive to Siliguri / NJP → Departure"
+        }
+      ],
+      "inclusions": [
+        "Suggested day-by-day itinerary",
+        "Trip coordination with the organisers"
+      ],
+      "exclusions": [
+        "Transport, meals, entry fees and activities unless explicitly included in the final quote"
+      ],
+      "cancellation": "Confirm cancellation and refund terms with the organisers before booking or paying.",
+      "estimated_cost": {
+        "min_paise": 800000,
+        "max_paise": 950000,
+        "basis": "per person",
+        "note": "Includes shared accommodation, food, local sightseeing and NJP transfers; excludes train travel to NJP."
+      }
+    },
+    {
+      "id": "pack-sikkim",
+      "slug": "sikkim",
+      "destination_id": "sikkim",
+      "title": "Take the conversation to the mountains.",
+      "theme": "Adventure",
+      "nights": 4,
+      "min_group": 2,
+      "max_group": 20,
+      "price_paise": null,
+      "description": "A suggested 5-day, 4-night Gangtok and Pelling escape, with a Tsomgo Lake excursion subject to permits and road conditions. The organisers confirm availability, the itinerary and the final quote before booking.",
+      "days": [
+        {
+          "day_no": 1,
+          "title": "Day 1",
+          "description": "NJP Railway Station / Bagdogra Airport → Drive to Gangtok → Check-in → MG Marg evening walk → Overnight in Gangtok"
+        },
+        {
+          "day_no": 2,
+          "title": "Day 2",
+          "description": "Gangtok → Tsomgo Lake → Baba Mandir → Return to Gangtok. Excursion subject to permits, weather and road access; the organisers will arrange an alternative if unavailable."
+        },
+        {
+          "day_no": 3,
+          "title": "Day 3",
+          "description": "Gangtok → Scenic drive to Pelling → Check-in → Leisure evening → Overnight in Pelling"
+        },
+        {
+          "day_no": 4,
+          "title": "Day 4",
+          "description": "Pelling → Pemayangtse Monastery → Rabdentse Ruins → Pelling Skywalk → Return to Pelling. Visits depend on opening hours, road access and available time."
+        },
+        {
+          "day_no": 5,
+          "title": "Day 5",
+          "description": "Pelling → Drive to NJP Railway Station / Bagdogra Airport → Departure. Keep sufficient time for onward connections."
+        }
+      ],
+      "inclusions": [
+        "Suggested day-by-day itinerary",
+        "Trip coordination with the organisers"
+      ],
+      "exclusions": [
+        "Transport, meals, entry fees and activities unless explicitly included in the final quote"
+      ],
+      "cancellation": "Confirm cancellation and refund terms with the organisers before booking or paying.",
+      "estimated_cost": {
+        "min_paise": 2000000,
+        "max_paise": 2400000,
+        "basis": "per person",
+        "note": "Indicative planning estimate for twin-sharing accommodation, breakfast/dinner, local sightseeing and NJP/Bagdogra transfers. Excludes travel to/from NJP or Bagdogra, taxes, entry fees, personal expenses and optional Nathula visits. Inclusions and actual cost require organiser confirmation."
+      }
+    },
+    {
+      "id": "pack-meghalaya",
+      "slug": "meghalaya",
+      "destination_id": "meghalaya",
+      "title": "Follow the green.",
+      "theme": "Nature",
+      "nights": 5,
+      "min_group": 2,
+      "max_group": 20,
+      "price_paise": null,
+      "description": "A suggested Meghalaya escape for your campus crew. The organisers confirm travel, availability, the final itinerary and the full quote before booking.",
+      "days": [
+        {
+          "day_no": 1,
+          "title": "Day 1",
+          "description": "Guwahati → Umiam Lake (Barapani) → Shillong Peak Viewpoint → Don Bosco Centre for Indigenous Cultures → Police Bazaar"
+        },
+        {
+          "day_no": 2,
+          "title": "Day 2",
+          "description": "Shillong → Mawkdok Dympep Valley Viewpoint → Photography Stops → Wei Sawdong Falls → Dainthlen Falls → Camping Stay"
+        },
+        {
+          "day_no": 3,
+          "title": "Day 3",
+          "description": "Camping Stay → Dawki / Bangladesh Viewpoint → Mawlynnong Village (Asia’s Cleanest Village) → Riwai Single Living Root Bridge → Elephant Falls Hotel / Sohra Hotel"
+        },
+        {
+          "day_no": 4,
+          "title": "Day 4",
+          "description": "Hotel → Trek to Nongriat Village → Double Decker Living Root Bridge → Rainbow Falls (if included in your trek plan) → Return to Hotel"
+        },
+        {
+          "day_no": 5,
+          "title": "Day 5",
+          "description": "Hotel → Elephant Falls → Garden of Caves (Ka Bri Synrang) → Mawsmai Cave → Sohra (Cherrapunji)"
+        },
+        {
+          "day_no": 6,
+          "title": "Day 6",
+          "description": "Sohra → Guwahati → Kamakhya Temple (if time permits) → Departure"
+        }
+      ],
+      "inclusions": [
+        "Suggested day-by-day itinerary",
+        "Trip coordination with the organisers"
+      ],
+      "exclusions": [
+        "Transport, meals, entry fees and activities unless explicitly included in the final quote"
+      ],
+      "cancellation": "Confirm cancellation and refund terms with the organisers before booking or paying.",
+      "estimated_cost": {
+        "min_paise": 1500000,
+        "max_paise": 1700000,
+        "basis": "",
+        "note": "Confirm whether this range is per person or for the group, and what is included, with the organisers."
+      }
+    }
+  ]
+}

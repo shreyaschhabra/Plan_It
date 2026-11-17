@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /my-trips
+Disallow: /trips/

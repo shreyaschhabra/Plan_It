@@ -1,0 +1,7 @@
+import {createServer} from 'node:http';
+import {readFile,stat} from 'node:fs/promises';
+import {resolve,extname} from 'node:path';
+import {renderPage} from './render.js';
+const root=resolve('public');
+const types={'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.webp':'image/webp','.webmanifest':'application/manifest+json','.mp4':'video/mp4','.vtt':'text/vtt'};
+createServer(async(req,res)=>{res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Referrer-Policy','strict-origin-when-cross-origin');if(!['GET','HEAD'].includes(req.method)){res.writeHead(405,{Allow:'GET, HEAD'});res.end('Method not allowed');return;}try{const path=decodeURIComponent(new URL(req.url,'http://localhost').pathname),file=resolve(root,'.'+path);if(!file.startsWith(root+'/')&&file!==root){res.writeHead(403);res.end();return;}let data,type;try{if((await stat(file)).isDirectory())throw new Error();data=await readFile(file);type=types[extname(file)]||'application/octet-stream';}catch{if(extname(path)){res.writeHead(404);res.end('Not found');return;}data=await renderPage(path);type=types['.html'];}res.setHeader('Content-Type',type);res.setHeader('Cache-Control','no-cache');res.end(req.method==='HEAD'?undefined:data);}catch{res.writeHead(500);res.end('Unable to load this page.');}}).listen(Number(process.env.PORT)||3000,'127.0.0.1',()=>console.log(`PLAN-IT http://127.0.0.1:${process.env.PORT||3000}`));
